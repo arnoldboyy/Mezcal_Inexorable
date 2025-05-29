@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocteles - Mezcal Inexorable</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="CoctelesStyles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Libre+Bodoni:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Barra de Navegación -->
+    <header id="navbar">
+        <nav class="navbar">
+            <a href="Index.html" class="logo">
+                <img src="img/logo.png" alt="Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="Filosofía.html">Filosofía</a></li>
+                <li><a href="Proceso.html">Proceso</a></li>
+                <li><a href="Comprar.html">Comprar</a></li>
+                <li><a href="Cocteles.html">Cócteles</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección de Cócteles -->
+    <section id="cocteles">
+        <div class="container">
+            <!-- Mensaje de bienvenida o introducción -->
+            <div class="intro-message">
+                <h1>Para quienes buscan más que solo un buen trago</h1>
+                <p>Deja una impresión duradera en tus invitados con un cóctel, un detalle que nunca olvidarán</p>
+            </div>
+
+            <div class="cocteles-gallery">
+                <!-- Galería de Cócteles -->
+                <div class="coctel-item" data-coctel="1">
+                    <a>
+                        <img src="img/Cocteles/1.jpg" alt="Cóctel 1">
+                        <p class="coctel-name">
+                            Lost Souls... <span class="ver-mas"> Ver más</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="coctel-item" data-coctel="2">
+                    <a>
+                        <img src="img/Cocteles/2.jpg" alt="Cóctel 2">
+                        <p class="coctel-name">
+                            Granada Margarita... <span class="ver-mas"> Ver más</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="coctel-item" data-coctel="3">
+                    <a>
+                        <img src="img/Cocteles/3.jpg" alt="Cóctel 3">
+                        <p class="coctel-name">
+                            Naked in Tulum... <span class="ver-mas"> Ver más</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="coctel-item" data-coctel="4">
+                    <a>
+                        <img src="img/Cocteles/4.jpg" alt="Cóctel 4">
+                        <p class="coctel-name">
+                            Green Path... <span class="ver-mas"> Ver más</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="coctel-item" data-coctel="5">
+                    <a>
+                        <img src="img/Cocteles/5.jpg" alt="Cóctel 5">
+                        <p class="coctel-name">
+                            Explorer´s Sprits... <span class="ver-mas"> Ver más</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="coctel-item" data-coctel="6">
+                    <a>
+                        <img src="img/Cocteles/6.jpg" alt="Cóctel 6">
+                        <p class="coctel-name">
+                            Mezcal Mule... <span class="ver-mas"> Ver más</span>
+                        </p>
+                    </a>
+                </div>
+                <!-- Agrega más ítems de cócteles aquí -->
+            </div>
+        </div>
+    </section>
+
+    <div id="coctelModal" class="coctel-modal">
+        <div class="coctel-modal-content">
+            <span id="modalClose" class="coctel-modal-close">&times;</span>
+            <div id="coctelDetails" class="coctel-details">
+                <!-- Añadir el nombre del cóctel -->
+                <h2 id="coctelName" class="coctel-name">Lost Souls</h2>
+
+                <div class="coctel-info">
+                    <!-- Reestructura para mostrar la imagen junto a los ingredientes y método -->
+                    <div class="coctel-image">
+                        <img id="coctelImage" src="" alt="Imagen del cóctel">
+                    </div>
+                    <div class="coctel-text">
+                        <h3>Ingredientes</h3>
+                        <ul id="ingredientesList"></ul>
+                        <h3>Método</h3>
+                        <p id="metodoText"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-socials">
+                <a href="https://www.facebook.com" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com" target="_blank" class="social-icon">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+            <div class="footer-text">
+                <p>Evita el Exceso</p>
+                <p>INEXORABLE recomienda el consumo responsable. Alc 45%. Vol. Todos los derechos reservados.</p>
+                <p>No compartas este contenido con personas que no tengan la edad legal para consumir alcohol.</p>
+                <p>
+                    <a href="Aviso de Privacidad.html" class="footer-link">Aviso de Privacidad</a> | 
+                    <a href="Condiciones de Uso.html" class="footer-link">Condiciones de Uso</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="Js.js"></script>
+</body>
+
+</html>

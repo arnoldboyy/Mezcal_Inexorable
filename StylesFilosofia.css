@@ -1,0 +1,186 @@
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.timeline-item {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    gap: 20px;
+    position: relative; /* Para que el pseudo-elemento esté posicionado correctamente */
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px; /* Altura del borde */
+    background: linear-gradient(to right, #080808 50%, #c51e1e 50%); /* Mitad de un color, mitad de otro */
+}
+
+
+.date {
+    width: 20%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.date h3 {
+    font-size: 24px;
+    margin: 0;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.date span {
+    font-size: 14px;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.content {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.content img {
+    width: 200px;
+    height: auto;
+}
+
+.text {
+    flex: 1;
+    font-family: Arial, sans-serif;
+}
+
+.text h2 {
+    font-size: 24px;
+    margin: 0 0 10px;
+    color: #0a0a0a;
+}
+
+.text p {
+    font-size: 16px;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.category {
+    font-size: 14px;
+    color: #c00;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.date {
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+}
+
+@media (min-width: 1024px) {
+    .timeline {
+        padding: 0 10%;
+    }
+
+    .timeline-item {
+        display: flex;
+        flex-direction: row;
+        border-top: 5px solid #080808; /* Mitad de un color */
+        padding: 20px 0;
+        align-items: center;
+    }
+
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(to right, #d61e1e 50%, #080808 50%); /* Mitad de otro color */
+    }
+
+    .timeline-item .content {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 40px;
+    }
+
+    .timeline-item .content img {
+        width: 40%;
+        height: auto;
+        border-radius: 5px; /* Añadir bordes redondeados para un toque elegante */
+    }
+
+    .timeline-item .text {
+        width: 60%;
+        text-align: left;
+        font-family: 'Libre Bodoni', serif; /* Aplicar la tipografía Bodoni */
+    }
+
+    .timeline-item .text h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+        color: #0f0f0f;
+        font-family: 'Libre Bodoni', serif; /* Aplicar la tipografía Bodoni */
+
+    }
+
+    .timeline-item .text p {
+        font-size: 18px;
+        color: #666;
+        font-family: 'Libre Bodoni', serif; /* Aplicar la tipografía Bodoni */
+
+    }
+
+    .timeline-item .category {
+        font-size: 14px;
+        color: #c00;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: 'Libre Bodoni', serif; /* Aplicar la tipografía Bodoni */
+
+    }
+}
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .date {
+        width: 100%;
+        padding-bottom: 10px;
+    }
+
+    .content {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .content img {
+        width: 100%;
+        height: auto;
+    }
+
+    .text {
+        width: 100%;
+        padding-top: 10px;
+        font-family: 'Libre Bodoni', serif; /* Aplicar la tipografía Bodoni */
+
+    }
+}

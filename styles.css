@@ -1,0 +1,602 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Libre Bodoni', serif; /* Fuente más ligera para textos */
+    color: #b2b0b0; /* Gris claro para textos */
+    background-color: #000000; /* Fondo negro */
+    overflow-x: hidden; /* Evitar scroll horizontal */
+    cursor: url(img/Sin\ título-1\ \(2\)\ \(1\).png), auto;
+}
+
+header {
+    /*position: fixed; /* Asegura que el header esté sobre el carousel */
+    top: 0;
+    width: 100%;
+	height: 70px; /*Alto de la imagen*/
+    /*background-color: rgba(0, 0, 0, 0.7);*/ /* Fondo negro con transparencia */
+    background-color: #000000;
+    z-index: 1000; /* Asegura que el header esté encima de otros elementos */
+	transition: top 0.3s; /* Transición suave para mostrar/ocultar */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 1px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.navbar a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 65px; /* Ajusta el tamaño del logo según sea necesario */ 
+	margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+	flex-grow: 1; /* Permite que el contenedor de enlaces ocupe el espacio disponible */
+    justify-content: flex-end; /* Alinea los enlaces al final del contenedor */
+}
+
+.nav-links li {
+    margin-left: -5px; /*Ajuste segun el numero de enlaces*/
+}
+
+.nav-links a {
+    color: #ffffff; /* Gris claro para enlaces */
+    text-decoration: none;
+    font-size: 22px;
+    padding: 5px;
+    font-family: 'Bodoni Moda', serif; /* Fuente más pesada para enlaces */
+}
+
+.nav-links a:hover {
+    background-color: #e83f40; /* Rojo para el hover de enlaces */
+    color: #ffffff; /* Color de texto blanco en el hover */
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Menu Toggle Styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+	
+}
+
+.menu-toggle .bar {
+    background-color: #b2b0b0; /* Gris claro para las barras del menú */
+    height: 4px;
+    width: 35px;
+    margin: 3px 0;
+    border-radius: 3px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1px; /* Reduce el padding para el diseño móvil */
+        box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    }
+
+    .logo {
+        margin-left: 10px; /* Alinea el logo al borde izquierdo */
+        margin-right: auto; /* Asegura que el logo esté alineado a la izquierda */
+    }
+
+	.menu-toggle {
+        display: flex;
+        margin-left: auto; /* Alinea el menú hamburguesa a la derecha */
+        margin-right: 10px; /* Alinea el menú hamburguesa al borde derecho */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Fondo negro con mayor transparencia para el menú desplegable */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 1000; /* Asegura que el menú esté encima de otros elementos */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links a {
+        padding: 15px;
+        text-align: center;
+        display: block;
+        border-bottom: 1px solid #444;
+        font-family: 'Bodoni Moda', serif; /* Fuente más pesada para enlaces */
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Carousel Styles */
+.carousel-inner .item {
+    height: 100vh; /* Asegura que el carrusel abarque toda la pantalla */
+}
+
+.banner {
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Asegura que las imágenes del carrusel ocupen toda la altura */
+}
+
+.carousel-caption {
+    padding-bottom: 250px;
+    font-family: 'Libre Bodoni', serif; /* Mantener la misma tipografía */
+}
+
+.carousel-caption h2 {
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.carousel-caption h2 span {
+    color: #e83f40; /* Rojo */
+}
+
+.carousel-caption a {
+    background: #e83f40; /* Rojo */
+    padding: 15px 35px;
+    display: inline-block;
+    margin-top: 15px;
+    color: #ffffff; /* Texto blanco */
+    text-transform: uppercase;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s; /* Transición suave para el cambio de color */
+}
+
+.carousel-caption a:hover,
+.carousel-caption a:focus {
+    background: #d72b2a; /* Cambia a un tono más oscuro de rojo en hover */
+    color: #ffffff; /* Mantén el texto blanco */
+    text-decoration: none; /* Sin subrayado en hover y focus */
+}
+
+.carousel-control.right,
+.carousel-control.left {
+    background-image: none;
+}
+
+.carousel-indicators .active {
+    background-color: #e83f40; /* Rojo */
+    border-color: #e83f40; /* Rojo */
+}
+
+/* Responsive CSS */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .carousel-caption {
+        padding-bottom: 150px;
+    }
+    .carousel-caption h2 {
+        font-size: 50px;
+    }
+}
+
+/* Responsive CSS Continuación */
+@media only screen and (max-width: 767px) {
+    .carousel-caption {
+        padding-bottom: 150px;
+    }
+    .carousel-caption h2 {
+        font-size: 40px;
+    }
+    .carousel-caption h3 {
+        font-size: 20px;
+    }
+    .carousel-caption a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+.carousel-caption {
+    padding-bottom: 50px; /* Reduce el padding inferior para mover el contenido hacia arriba */
+    font-family: 'Libre Bodoni', serif; /* Mantener la misma tipografía */
+    transform: translateY(-200px); /* Ajusta el valor para mover el contenido hacia arriba */
+}
+
+.carousel-caption h4 {
+    font-size: 35px; /* Ajusta el tamaño de la fuente para que sea la mitad de h2 */
+    text-transform: uppercase; /* Si quieres que el texto esté en mayúsculas */
+    margin-top: 10px; /* Espacio encima del h4, ajusta según sea necesario */
+    margin-bottom: 10px; /* Espacio debajo del h4, ajusta según sea necesario */
+    color: #ffffff; /* Ajusta el color del texto si es necesario */
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .carousel-caption h4 {
+        font-size: 25px; /* Ajusta el tamaño para pantallas medianas */
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .carousel-caption h4 {
+        font-size: 20px; /* Ajusta el tamaño para pantallas pequeñas */
+    }
+}
+
+/* Estilos para el Modal de Filtro de Edad */
+.age-filter-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+}
+
+.age-filter-modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+.age-filter-modal h2 {
+    margin-bottom: 20px;
+}
+
+.age-filter-modal p {
+    margin-bottom: 20px;
+}
+
+.age-filter-modal button {
+    background: #e83f40;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.age-filter-modal button:hover {
+    background: #c62828;
+}
+
+/* Estilos Generales */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.heading-2 {
+    font-family: 'Libre Bodoni', serif;
+    font-size: 36px;
+    color: #e83f40;
+    margin-bottom: 20px;
+}
+
+/* Sección INEXORABLE */
+#inexorable {
+    background-color: #f8f8f8;
+    padding: 60px 0;
+}
+
+#inexorable .content-wrapper {
+    text-align: center;
+}
+
+#inexorable .image-section {
+    margin: 20px auto;
+    opacity: 0; /* Ocultar al principio para animar */
+    transform: translateY(20px); /* Posición inicial */
+    transition: opacity 0.52s ease-out, transform 0.52s ease-out; /* Transiciones suaves */
+}
+
+#inexorable .image-section img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+#inexorable .text-section {
+    margin: 20px auto;
+    padding: 0 20px;
+    opacity: 0; /* Ocultar al principio para animar */
+    transform: translateY(20px); /* Posición inicial */
+    transition: opacity 0.52s ease-out, transform 0.52s ease-out; /* Transiciones suaves */
+}
+
+#inexorable .text-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    font-family: 'Libre Bodoni', serif;
+    margin-bottom: 20px;
+}
+
+#inexorable .read-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #e83f40;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Libre Bodoni', serif;
+    margin-top: 20px;
+    opacity: 0; /* Ocultar al principio para animar */
+    transform: translateY(20px); /* Posición inicial */
+    transition: opacity 0.52s ease-out, transform 0.52s ease-out; /* Transiciones suaves */
+}
+
+#inexorable .read-more-btn:hover {
+    background-color: #d72b2a;
+}
+
+/* Sección Nuestra Historia */
+#history {
+    background-color: #f8f8f8;
+    padding: 60px 0;
+}
+
+#history .services-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 120px;
+}
+
+#history .text-section,
+#history .image-section {
+    flex: 1;
+    max-width: 50%;
+    opacity: 0; /* Ocultar al principio para animar */
+    transform: translateY(20px); /* Posición inicial */
+    transition: opacity 0.52s ease-out, transform 0.52s ease-out; /* Transiciones suaves */
+}
+
+#history .text-section {
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center; /* Centramos el texto */
+}
+
+#history .text-section h3 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Libre Bodoni', serif;
+    color: #e83f40;
+}
+
+#history .text-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    font-family: 'Libre Bodoni', serif;
+}
+
+#history .image-section {
+    position: relative;
+}
+
+#history .image-section img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Animaciones */
+.fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #inexorable .text-section p,
+    #history .text-section p {
+        font-size: 16px;
+    }
+
+    #inexorable .read-more-btn,
+    #history .read-more-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    #history .services-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #history .text-section,
+    #history .image-section {
+        max-width: 100%;
+    }
+
+    #history .text-section {
+        text-align: center;
+        order: 2; /* Poner el texto después de la imagen en pantallas pequeñas */
+    }
+
+    #history .image-section {
+        order: 1; /* Poner la imagen antes del texto en pantallas pequeñas */
+    }
+}
+
+
+/* Sección de Productos */
+#products {
+    background-color: #f8f8f8;
+    padding: 60px 0;
+}
+
+#products .products-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 110px; /* Espacio entre productos */
+}
+
+#products .product-item {
+    text-align: center;
+    width: 200px; /* Ajusta el tamaño según sea necesario */
+}
+
+#products .product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    animation: moveUpDown 3s infinite ease-in-out;
+}
+
+#products .product-name {
+    margin-top: 10px;
+    font-family: 'Libre Bodoni', serif;
+    font-size: 18px;
+}
+
+/* Colores específicos para cada producto */
+#products .product-name.espadin {
+    color: #b2b0b0;
+}
+
+#products .product-name.cuishe {
+    color: #e83f40;
+}
+
+#products .product-name.tepeztate {
+    color: #a47146;
+}
+
+#products .product-name.tobalá {
+    color: #2a844e;
+}
+
+/* Animación infinita de arriba hacia abajo */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px); /* Ajusta la distancia de movimiento si es necesario */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para el botón */
+.button-wrapper {
+    text-align: center; /* Centra el botón */
+    margin-top: 40px; /* Espacio superior antes del botón */
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff; /* Color del texto */
+    background-color: #e83f40; /* Color de fondo */
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Libre Bodoni', serif;
+    transition: background-color 0.3s, color 0.3s; /* Añadido para suavizar cambios */
+}
+
+.read-more-btn:hover {
+    background-color: #d72b2a; /* Color de fondo al pasar el puntero */
+    color: #fff; /* Asegura que el color del texto no cambie */
+    text-decoration: none; /* Asegura que el texto no tenga subrayado */
+}
+
+/* Estilos del Pie de Página */
+footer {
+    background-color: #000000; /* Fondo negro */
+    color: #b2b0b0; /* Gris claro para el texto */
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Libre Bodoni', serif; /* Aplicar la fuente Libre Bodoni */
+}
+
+.footer-socials {
+    margin-bottom: 20px;
+}
+
+.footer-socials .social-icon {
+    margin: 0 10px;
+    display: inline-block;
+    font-size: 24px; /* Tamaño de los iconos */
+    color: #b2b0b0; /* Color de los iconos */
+    transition: color 0.3s;
+}
+
+.footer-socials .social-icon:hover {
+    color: #ffffff; /* Color de los iconos al pasar el ratón */
+}
+
+.footer-text {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-text p {
+    margin: 10px 0;
+}
+
+.footer-link {
+    color: #b2b0b0;
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold;
+}
+
+.footer-link:hover {
+    color: #ffffff; /* Color al pasar el ratón sobre el enlace */
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .footer-socials .social-icon {
+        margin: 0 5px;
+        font-size: 20px; /* Ajuste del tamaño de los iconos en pantallas pequeñas */
+    }
+
+    .footer-text p {
+        font-size: 12px;
+    }
+}

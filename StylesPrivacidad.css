@@ -1,0 +1,118 @@
+/* Contact Page Styles */
+#contact {
+    background-color: #f8f8f8;
+    padding: 100px 0;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total del elemento */
+}
+
+#contact form textarea {
+    resize: none; /* Evita que el usuario cambie el tamaño del textarea */
+    height: 150px; /* Establece una altura fija */
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 500px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    font-family: 'Libre Bodoni', serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    font-family: 'Libre Bodoni', serif;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.contact-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.contact-form .btn {
+    background-color: #e83f40;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.contact-form .btn:hover {
+    background-color: #c62828;
+}
+
+.contact-info {
+    flex: 1;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.contact-info h3 {
+    font-family: 'Libre Bodoni', serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-family: 'Libre Bodoni', serif;
+    color: #333;
+    margin: 20px 0;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #e83f40;
+}
+
+.contact-info p,
+.contact-form label {
+    font-size: 20px;
+}
+
+.heading-2 {
+    font-size: 40px;
+}
+
+.contact-form h3,
+.contact-info h3 {
+    font-size: 28px;
+}
+
+/* Ajuste para el tamaño de los labels específicos */
+.contact-label {
+    font-size: 21px; /* Cambia el tamaño de la fuente a 20px */
+}
